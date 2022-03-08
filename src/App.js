@@ -4,13 +4,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
-import { createTheme } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 function App() {
   const [age, setAge] = useState('');
-  const theme = createTheme({
-    direction: 'rtl',
-  });
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -33,6 +30,8 @@ function App() {
             })}
           </Select>
         </FormControl>
+      <Button variant="outlined" sx={{width:300,backgroundColor:'red',":hover":{backgroundColor:"pink"}}}>Outlined</Button>
+
     </div>
   );
 }
