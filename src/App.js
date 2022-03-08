@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useState } from 'react';
+import { createTheme } from '@mui/material/styles';
 
 function App() {
+  const [age, setAge] = useState('');
+  const theme = createTheme({
+    direction: 'rtl',
+  });
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  const option = [{ value: 10, text: 'ten' }, { value: 20, text: 'twenty' }, { value: 30, text: 'thirty' },]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FormControl sx={{ minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={age}
+            label="Age"
+            onChange={handleChange}
+            sx={{ borderRadius:4 }}
+          >
+            {option.map((option) => {
+              return <MenuItem value={option.value}>{option.text}</MenuItem>
+            })}
+          </Select>
+        </FormControl>
     </div>
   );
 }
