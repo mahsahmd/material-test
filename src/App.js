@@ -30,7 +30,7 @@ function App() {
             })}
           </Select>
         </FormControl>
-      <Button variant="outlined" sx={{width:300,backgroundColor:'red',":hover":{backgroundColor:"pink"}}}>Outlined</Button>
+      <Button variant="outlined" sx={{width:300,backgroundColor:'blue',color:'white',":hover":{backgroundColor:"grey",color:'black'}}}>Outlined</Button>
 
     </div>
   );
